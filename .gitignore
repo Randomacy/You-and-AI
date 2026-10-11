@@ -30,6 +30,7 @@ models/
 data/
 interfaces-reference/
 .tribe/
+.tribe-assets-cache/
 cache/
 .cache/
 lightning_logs/
@@ -47,6 +48,9 @@ wandb/
 
 # Local backup of EEG-main; keep only EEG-main/ in this repository
 /EEG-main (1)/
+
+# Local transcription audio
+/clip-transcribe.ogg
 
 # Notebook, editor, and OS files
 .ipynb_checkpoints/
