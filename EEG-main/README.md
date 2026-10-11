@@ -1,6 +1,6 @@
-# Brain Gremlin
+# You & AI — Signal Room implementation notes
 
-Local NeuroPawn EEG visualization, painting, phone streaming, and experimental offline TRIBE processing. Media recording is opt-in; no cloud inference is configured.
+This folder contains the Signal Room EEG visualizer, Bloom browser showcase, opt-in phone capture, and experimental offline TRIBE processing. Media recording is opt-in; no cloud inference is configured. For the makeathon overview and fastest demo, start at the [project README](../README.md).
 
 ## Bloom companion preview
 
