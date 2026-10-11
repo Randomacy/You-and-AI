@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bloom · You & AI</title>
+  <link rel="stylesheet" href="/bloom.css">
+  <script defer src="/bloom.js"></script>
+</head>
+<body data-mood="happy">
+  <main class="showcase">
+    <section class="stage" aria-label="Bloom companion preview">
+      <div class="stage-top">
+        <span class="eyebrow">BLOOM / <span id="mood-label">HAPPY</span></span>
+        <a class="lab-link" href="/index.html">Signal Room ↗</a>
+      </div>
+      <p class="message" id="message" role="status">Something good is growing.</p>
+      <div class="bloom-wrap">
+        <div class="bloom" role="img" aria-label="Bloom, a pink eight-petal flower in a happy pose">
+          <div class="petals" aria-hidden="true">
+            <span class="petal" style="--i:0"></span><span class="petal" style="--i:1"></span>
+            <span class="petal" style="--i:2"></span><span class="petal" style="--i:3"></span>
+            <span class="petal" style="--i:4"></span><span class="petal" style="--i:5"></span>
+            <span class="petal" style="--i:6"></span><span class="petal" style="--i:7"></span>
+          </div>
+          <span class="ray ray-one" aria-hidden="true"></span>
+          <span class="ray ray-two" aria-hidden="true"></span>
+          <span class="ray ray-three" aria-hidden="true"></span>
+          <div class="center-halo" aria-hidden="true"></div>
+          <div class="face" aria-hidden="true">
+            <span class="brow brow-left"></span><span class="brow brow-right"></span>
+            <span class="eye eye-left"></span><span class="eye eye-right"></span>
+            <span class="glasses glasses-left"></span><span class="glasses glasses-right"></span>
+            <span class="bridge"></span><span class="temple temple-left"></span><span class="temple temple-right"></span>
+            <span class="mouth"></span>
+          </div>
+        </div>
+      </div>
+      <p class="stage-caption" id="stage-caption">Petals whirl quickly and the whole bloom lifts with energy.</p>
+    </section>
+    <aside class="states" aria-labelledby="states-heading">
+      <h1 id="states-heading" class="eyebrow">EMOTIONAL STATES</h1>
+      <div class="state-list" role="group" aria-label="Preview Bloom's emotional states">
+        <button class="state active" type="button" data-mood="happy" aria-pressed="true">
+          <span class="number">01</span><span class="state-copy"><span class="state-name">Happy</span><span class="description">Petals whirl quickly and the whole bloom lifts with energy.</span></span><span class="arrow">↗</span>
+        </button>
+        <button class="state" type="button" data-mood="sad" aria-pressed="false">
+          <span class="number">02</span><span class="state-copy"><span class="state-name">Sad</span><span class="description">Petals loosen and fall while the center stays present and open.</span></span><span class="arrow">↗</span>
+        </button>
+        <button class="state" type="button" data-mood="sleepy" aria-pressed="false">
+          <span class="number">03</span><span class="state-copy"><span class="state-name">Sleepy</span><span class="description">Petals drift in a slow orbit as Bloom stretches into a yawn.</span></span><span class="arrow">↗</span>
+        </button>
+        <button class="state" type="button" data-mood="focused" aria-pressed="false">
+          <span class="number">04</span><span class="state-copy"><span class="state-name">Focused</span><span class="description">Petals lock into rhythm, glasses appear, and the expression sharpens.</span></span><span class="arrow">↗</span>
+        </button>
+      </div>
+      <p class="note">YOU &amp; AI / BUBBLE KIN · A companion that reflects signals as art. These previews are choices, not emotion diagnoses.</p>
+    </aside>
+  </main>
+</body>
+</html>

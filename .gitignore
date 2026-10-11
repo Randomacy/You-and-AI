@@ -1,0 +1,56 @@
+# Python environments, caches, and build output
+.venv/
+venv/
+env/
+.tribe-win/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.phone/
+
+# Local sessions, downloaded assets, and training output
+recordings/
+models/
+data/
+interfaces-reference/
+.tribe/
+cache/
+.cache/
+lightning_logs/
+wandb/
+*.ckpt
+*.log
+*.sqlite
+*.sqlite3
+*.db
+.tmp/
+
+# Separately cloned upstream source and downloaded model snapshot
+/tribev2-source/
+/tribev2/
+
+# Local backup of EEG-main; keep only EEG-main/ in this repository
+/EEG-main (1)/
+
+# Notebook, editor, and OS files
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

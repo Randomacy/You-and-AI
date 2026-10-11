@@ -1,0 +1,71 @@
+:root{--plum:#2d2250;--pink:#ff7fab;--yellow:#ffe558;--violet:#8b79ff;--space:#fff8f1}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{background:var(--space);color:var(--plum);font-family:Manrope,Arial,sans-serif}
+button,a{font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid var(--violet);outline-offset:4px}
+.showcase{min-height:100vh;display:grid;grid-template-columns:minmax(0,2.07fr) minmax(355px,1fr)}
+.stage{position:relative;min-height:790px;overflow:hidden;border:1px solid var(--plum);background-color:var(--space);background-image:radial-gradient(#2d22501c 1.5px,transparent 1.6px);background-size:30px 30px}
+.stage-top{position:absolute;left:3%;right:5%;top:3.4%;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.eyebrow,.lab-link{font-family:"DM Mono",Consolas,monospace;font-size:12px;letter-spacing:.11em;text-transform:uppercase}
+.lab-link{color:var(--plum);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+.message{position:absolute;right:9%;top:12%;margin:0;padding:20px 29px;border:2px solid var(--plum);border-radius:34px 34px 8px 34px;background:var(--space);font:16px/1.4 "DM Mono",Consolas,monospace;z-index:2}
+.bloom-wrap{position:absolute;inset:0;display:grid;place-items:center;transform:translateY(-1%)}
+.bloom{position:relative;width:min(440px,68vw);height:min(440px,68vw);filter:drop-shadow(0 1px 0 #2d22501c)}
+.petals{position:absolute;inset:0}
+.petal{position:absolute;left:50%;top:50%;width:29%;height:53%;border:2px solid var(--plum);border-radius:54% 54% 48% 52%;background:linear-gradient(160deg,#ff9bbc 4%,#ee83b6 47%,#bd8bde 100%);transform:translate(-50%,-50%) rotate(calc(var(--i)*45deg)) translateY(-33%);transform-origin:center}
+.center-halo{position:absolute;left:50%;top:50%;width:78%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#ffe55888 0%,#ffe55855 31%,#ffe5581f 57%,transparent 75%);z-index:2;pointer-events:none}
+.face{position:absolute;left:50%;top:50%;width:36%;aspect-ratio:1;transform:translate(-50%,-50%);border:2px solid var(--plum);border-radius:50%;background:var(--yellow);z-index:3}
+.eye{position:absolute;top:39%;width:8%;height:13%;background:var(--plum);border-radius:50%}
+.eye-left{left:33%}.eye-right{right:33%}
+.mouth{position:absolute;left:50%;top:66%;width:25%;height:10%;transform:translate(-50%,-50%);background:var(--plum);border-radius:50%}
+.brow,.glasses,.bridge,.temple{display:none}
+.ray{display:none;position:absolute;width:4px;height:34px;background:var(--plum);border-radius:5px;z-index:1}
+.ray-one{left:50%;top:-7%}.ray-two{left:5%;top:20%;transform:rotate(-53deg)}.ray-three{right:5%;top:20%;transform:rotate(53deg)}
+.stage-caption{position:absolute;right:3%;bottom:3%;max-width:350px;margin:0;text-align:right;font:italic clamp(21px,2.1vw,31px)/1 "Instrument Serif",Georgia,serif}
+.states{border:1px solid var(--plum);border-left:0;padding:48px clamp(25px,4%,58px);display:flex;flex-direction:column}
+.states h1{font-weight:400;margin:0 0 50px}
+.state-list{display:grid}
+.state{position:relative;min-height:154px;display:grid;grid-template-columns:39px 1fr 20px;align-items:center;gap:17px;padding:23px 9px;border:0;border-top:1px solid #a89da1;background:transparent;color:var(--plum);text-align:left;cursor:pointer}
+.state:last-child{border-bottom:1px solid #a89da1}
+.state.active{border-color:var(--plum);background:var(--plum);color:var(--space);padding-inline:22px}
+.state.active+.state{border-top-color:transparent}
+.number,.description{font:11px/1.45 "DM Mono",Consolas,monospace;color:#9d91aa}
+.state-copy{display:flex;flex-direction:column;gap:13px}
+.state-name{font:normal clamp(36px,3vw,52px)/.93 "Instrument Serif",Georgia,serif;letter-spacing:-.04em}
+.description{max-width:450px}
+.arrow{font-size:24px;opacity:0}.state.active .arrow{opacity:1}
+.state:hover:not(.active){background:#f6eced}
+.note{margin:auto 0 0;padding-top:40px;color:#776b80;font:12px/1.6 "DM Mono",Consolas,monospace}
+body[data-mood=happy] .petals{animation:happy-spin 2.2s linear infinite}
+body[data-mood=happy] .face{animation:happy-bounce 2.2s ease-in-out infinite}
+body[data-mood=happy] .ray{display:block}
+body[data-mood=sad] .petal{animation:petal-fall 14s linear infinite;animation-delay:calc(var(--i)*-1.75s)}
+body[data-mood=sad] .face{transform:translate(-50%,-44%)}
+body[data-mood=sad] .mouth{width:15%;height:7%}
+body[data-mood=sleepy] .petals{animation:sleepy-orbit 22s linear infinite}
+body[data-mood=sleepy] .face{animation:sleepy-breathe 4s ease-in-out infinite}
+body[data-mood=sleepy] .eye{height:3%;width:15%;top:42%}
+body[data-mood=sleepy] .eye-left{left:29%}body[data-mood=sleepy] .eye-right{right:29%}
+body[data-mood=sleepy] .mouth{width:13%;height:19%;top:67%;animation:yawn 4s ease-in-out infinite}
+body[data-mood=focused] .petals{animation:focus-step 8s steps(16,end) infinite}
+body[data-mood=focused] .center-halo{animation:attention 2s ease-in-out infinite}
+body[data-mood=focused] .mouth{width:17%;height:7%}
+body[data-mood=focused] .brow{display:block;position:absolute;top:28%;width:20%;height:3px;background:var(--plum);border-radius:3px}
+body[data-mood=focused] .brow-left{left:25%;transform:rotate(19deg)}body[data-mood=focused] .brow-right{right:25%;transform:rotate(-19deg)}
+body[data-mood=focused] .glasses{display:block;position:absolute;top:33%;width:28%;height:27%;border:3px solid var(--plum);border-radius:50%}
+body[data-mood=focused] .glasses-left{left:17%}body[data-mood=focused] .glasses-right{right:17%}
+body[data-mood=focused] .bridge{display:block;position:absolute;left:44%;top:44%;width:12%;height:3px;background:var(--plum)}
+body[data-mood=focused] .temple{display:block;position:absolute;top:46%;width:11%;height:3px;background:var(--plum)}
+body[data-mood=focused] .temple-left{left:8%}body[data-mood=focused] .temple-right{right:8%}
+@keyframes happy-spin{to{transform:rotate(360deg)}}
+@keyframes happy-bounce{50%{transform:translate(-50%,-54%) scale(1.035)}}
+@keyframes petal-fall{0%,78%,100%{opacity:1;transform:translate(-50%,-50%) rotate(calc(var(--i)*45deg)) translateY(-33%)}90%{opacity:.8;transform:translate(-50%,-15%) rotate(calc(var(--i)*45deg + 25deg)) translateY(-33%)}97%{opacity:0;transform:translate(-45%,85%) rotate(calc(var(--i)*45deg + 45deg)) translateY(-33%)}}
+@keyframes sleepy-orbit{to{transform:rotate(360deg)}}
+@keyframes sleepy-breathe{50%{transform:translate(-50%,-50%) scale(.97,1.03)}}
+@keyframes yawn{50%{height:24%}}
+@keyframes focus-step{to{transform:rotate(360deg)}}
+@keyframes attention{50%{transform:translate(-50%,-50%) scale(1.08);opacity:.7}}
+@media(max-width:900px){.showcase{grid-template-columns:1fr}.stage{min-height:600px}.states{border-left:1px solid var(--plum);border-top:0}.states h1{margin-bottom:28px}.state{min-height:125px}.note{margin-top:20px}}
+@media(max-width:560px){.stage{min-height:520px}.bloom{width:min(330px,80vw);height:min(330px,80vw)}.message{top:16%;right:5%;max-width:80%;font-size:12px;padding:14px 16px}.stage-caption{font-size:21px;max-width:250px}.stage-top{top:4%}.state-name{font-size:38px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}body[data-mood=sad] .petal:nth-child(5){opacity:.5;transform:translate(-20%,8%) rotate(180deg) translateY(-33%)}}

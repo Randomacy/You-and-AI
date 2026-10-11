@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+
+.phone/
+
+.DS_Store
+recordings/
+data/
+models/
+interfaces-reference/
+.tribe/
+
+.env
+.env.*
+!.env.example
